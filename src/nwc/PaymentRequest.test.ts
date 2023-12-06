@@ -47,7 +47,7 @@ describe("PaymentRequestEvent", () => {
       const responseFilter = event.getResponseFilter();
       const pubkey = getPublicKey(nwc.secret);
       expect(responseFilter).toStrictEqual({
-        kind: 23195,
+        kinds: [23195],
         tags: [
           ["e", event.id],
           ["p", pubkey],

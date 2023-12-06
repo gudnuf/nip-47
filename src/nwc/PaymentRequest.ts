@@ -29,7 +29,7 @@ export class PaymentRequestEvent extends NDKEvent {
 
   get responseFilter() {
     return {
-      kind: 23195,
+      kinds: [23195],
       tags: [
         ["e", this.id],
         ["p", this.pubkey],
