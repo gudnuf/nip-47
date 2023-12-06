@@ -30,6 +30,13 @@ describe("PaymentRequestEvent", () => {
       const event = PaymentRequestEvent.create(nwcUrl, invoice);
       expect(event).resolves.toBeInstanceOf(PaymentRequestEvent);
     });
+
+    test("should be publishable by ndk", async () => {
+      const nwc = new NWC(nwcUrl);
+      const invoice = "lnbc123456789";
+      const event = await PaymentRequestEvent.create(nwc, invoice);
+      expect(typeof event.event.publish).toBe("function");
+    })
   });
 
   describe(".getResponseFilter()", () => {

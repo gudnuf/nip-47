@@ -4,11 +4,13 @@ import { NWC } from "./Nwc";
 export class PaymentRequestEvent extends NDKEvent {
   invoice: string;
   nwc: NWC;
+  event: NDKEvent;
 
   private constructor(nwc: NWC, invoice: string, event: NostrEvent) {
     super(undefined, event);
     this.nwc = nwc;
     this.invoice = invoice;
+    this.event = new NDKEvent(undefined, event);
   }
 
   static async create(
