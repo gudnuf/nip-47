@@ -1,8 +1,33 @@
 {
-  "name": "nip-47",
+  "name": "nip47",
   "version": "0.0.1",
   "description": "A flexible library for sending and receiving payments via NWC.",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "./dist/index.mjs",
+  "exports": {
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.js",
+    "types": "./dist/index.d.ts"
+  },
+  "documentation": "https://github.com/gudnuf/nip47/blob/main/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gudnuf/nip47"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "keywords": [
+    "nostr",
+    "nip47",
+    "nip-47",
+    "nwc",
+    "wallet connect",
+    "nostr wallet connect",
+    "lightning"
+  ],
   "scripts": {
     "test": "jest",
     "build": "tsup src/index.ts --format cjs,esm --dts"

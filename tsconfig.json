@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
     "outDir": "./dist",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["./custom.d.ts", "src/**/**/*.ts"],
+  "include": ["src/**/**/*.ts"],
   "exclude": ["dist", "build", "node_modules"]
 }
