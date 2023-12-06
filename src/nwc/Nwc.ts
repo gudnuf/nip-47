@@ -100,4 +100,9 @@ export class NWC {
 
     return finishEvent(eventTemplate, this.secret) as NostrEvent;
   }
+
+  async decryptContent(encryptedContent: string) {
+    const content = await nip04.decrypt(this.secret, this.walletPubkey, encryptedContent);
+    return JSON.parse(content);
+  }
 }

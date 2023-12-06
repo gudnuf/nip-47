@@ -82,4 +82,18 @@ describe("NWC", () => {
       await expect(nwc.makeNWCRequestEvent("")).rejects.toThrow();
     });
   });
+
+  describe("decryptContent()", () => {
+    test("should decrypt the content", async () => {
+      const invoice = "lnbc123456789";
+      const event = await nwc.makeNWCRequestEvent(invoice);
+      const decryptedContent = await nwc.decryptContent(event.content);
+      expect(decryptedContent).toStrictEqual({
+        method: "pay_invoice",
+        params: {
+          invoice,
+        },
+      });
+    });
+  })
 });
